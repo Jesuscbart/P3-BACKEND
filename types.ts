@@ -1,19 +1,19 @@
-export interface Character {
-    ID: number;
-    Name: string;
-    Status: string;
-    Species: string;
-    Gender: string;
-    Origin: Origin;
-    Location: Location;
-    Created: Fecha;
+export type Character = {
+    id: number;
+    name: string;
+    status: string;
+    species: string;
+    gender: string;
+    origin: Origin;
+    location: Location;
+    created: Date;
   };
   
-  export type Fecha = {
-    dia: number;
-    mes: number;
-    año: number;
-  };
+  /*export type Fecha = {
+    day: number;
+    month: number;
+    year: number;
+  };*/
   
   export type Origin = {
     name: string;
@@ -25,8 +25,8 @@ export interface Character {
     url: string;
 };
 
-export interface Pagination { 
+/*export interface Pagination { 
   currentPage: null;          //Página actual
   nextPage:    null;          //Página siguiente
   totalPages:  null;          //Total de páginas
-}
+}*/
