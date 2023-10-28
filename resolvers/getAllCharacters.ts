@@ -1,5 +1,5 @@
 import { Request, Response } from "npm:express@4.18.2";
-import { Character } from "./types.ts";
+import { Character } from "../types.ts";
 
   
 const getAllCharacters = async (req: Request, res: Response) => {

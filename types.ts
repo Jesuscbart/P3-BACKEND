@@ -9,24 +9,15 @@ export type Character = {
     created: Date;
   };
   
-  /*export type Fecha = {
-    day: number;
-    month: number;
-    year: number;
-  };*/
-  
   export type Origin = {
     name: string;
     url: string;
   };
 
   export type Location = {
+    id: number;
     name: string;
-    url: string;
+    type: string;
+    dimension: string;
+    created: Date;
 };
-
-/*export interface Pagination { 
-  currentPage: null;          //Página actual
-  nextPage:    null;          //Página siguiente
-  totalPages:  null;          //Total de páginas
-}*/

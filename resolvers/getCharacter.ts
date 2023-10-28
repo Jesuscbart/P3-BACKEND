@@ -1,11 +1,11 @@
 import { Request, Response } from "npm:express@4.18.2";
-import { Character } from "./types.ts";
+import { Character } from "../types.ts";
 
 const getCharacter = async (req: Request, res: Response) => {
     try {
         const id = req.params.id;
         const response = await fetch(
-            `https://rickandmortyapi.com/api/character/${id}`
+            `https://rickandmortyapi.com/api/character/${id}`   //Aquí le paso el id que me llega por parámetro (1-826)
         );
         if (response.status !== 200) {
             res.status(response.status).send(response.statusText);
