@@ -10,6 +10,7 @@ const getAllLocations = async (req: Request, res: Response) => {
       const data = await response.json();
       const names: string[] = [];
   
+      
       if (data && data.results && data.results.length > 0) {
         data.results.forEach((location: any) => {
           names.push(location.name);
