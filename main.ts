@@ -2,6 +2,7 @@ import express, { Request, Response } from "npm:express@4.18.2";  //Importo expr
 import { Character } from "./types.ts";                           //Importo el tipo Character
 import { Location } from "./types.ts";                            //Importo el tipo Location
 import formatCharacter from "./formatCharacter.ts";               //Importo la función formatCharacter
+import formatLocation from "./formatLocation.ts";                 //Importo la función formatLocation
 import getAllCharacters from "./resolvers/getAllCharacters.ts";   //Ejercicio 1
 import getCharacter from "./resolvers/getCharacter.ts";           //Ejercicio 2
 import getAllLocations from "./resolvers/getAllLocations.ts";     //Ejercicio 3
@@ -46,24 +47,24 @@ app
     .delete("/deletelocation/:id", deleteLocation)
 
 
-    //Método GET para mostrar por pantalla y por terminal el contenido del array de personajes
-    .get("/arrayc", async (req: Request, res: Response) => {
+    //Método de prueba GET para mostrar por pantalla y por terminal el contenido del array de personajes
+    .get("/arraycharacters", async (req: Request, res: Response) => {
             for (const character of characters) {
-                console.log("ID: ",character.id, " | Nombre: ", character.name," | Status: ", character.status, " | Gender: ", character.gender);
+                console.log("ID: ",character.id, " | Nombre: ", character.name," | Status: ", character.status, " | Gender: ", character.gender); //Imprimo por terminal información básica
               }
               console.log("===========================================================")
-              const formattedCharacters = characters.map(formatCharacter);
-              res.send(formattedCharacters);
+              const formattedCharacters = characters.map(formatCharacter);  
+              res.send(formattedCharacters);  //Envío el array de personajes formateados
     })
 
-    //Método GET para mostrar por pantalla y por terminal el contenido del array de localizaciones
-    .get("/arrayl", async (req: Request, res: Response) => {
+    //Método de prueba GET para mostrar por pantalla y por terminal el contenido del array de localizaciones
+    .get("/arraylocations", async (req: Request, res: Response) => {
       for (const location of locations) {
-          console.log("ID: ",location.id, " | Nombre: ", location.name," | Type: ", location.type, " | Dimension: ", location.dimension);
+          console.log("ID: ",location.id, " | Nombre: ", location.name," | Type: ", location.type, " | Dimension: ", location.dimension); //Imprimo por terminal información básica
         }
         console.log("===========================================================")
-        
-        res.send(locations);
+        const formattedLocations = locations.map(formatLocation);
+        res.send(formattedLocations); //Envío el array de localizaciones formateadas
     });
 
     //Puerto 3000 para que se ejecute en localhost:3000

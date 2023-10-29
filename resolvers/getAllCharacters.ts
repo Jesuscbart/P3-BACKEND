@@ -1,5 +1,4 @@
 import { Request, Response } from "npm:express@4.18.2";
-import { Character } from "../types.ts";
 
 const getAllCharacters = async (req: Request, res: Response) => {
   try {
@@ -11,7 +10,7 @@ const getAllCharacters = async (req: Request, res: Response) => {
 
     //Se verifica que la respuesta tenga datos y que el array results tenga más de 0 elementos.
     if (data && data.results && data.results.length > 0) {  //Si se cumple, se recorre el array results y se añaden los nombres al array names
-      data.results.forEach((character: any) => {
+      data.results.forEach((character: any) => {  //Recorro el array results
         names.push(character.name); //Añado el nombre del personaje al array names
       });
     }

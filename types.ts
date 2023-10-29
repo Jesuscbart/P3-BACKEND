@@ -1,4 +1,4 @@
-export type Character = {
+export type Character = { //Defino el tipo Character
     id: number;
     name: string;
     status: string;
@@ -9,12 +9,12 @@ export type Character = {
     created: Date;
   };
   
-  export type Origin = {
+  export type Origin = {  //Defino el tipo Origin
     name: string;
     url: string;
   };
 
-  export type Location = {
+  export type Location = {  //Defino el tipo Location
     id: number;
     name: string;
     type: string;

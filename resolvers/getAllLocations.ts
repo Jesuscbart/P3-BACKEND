@@ -1,5 +1,4 @@
 import { Request, Response } from "npm:express@4.18.2";
-import { Location } from "../types.ts";
 
 const getAllLocations = async (req: Request, res: Response) => {
     try {
@@ -11,7 +10,7 @@ const getAllLocations = async (req: Request, res: Response) => {
   
       //Se verifica que la respuesta tenga datos y que el array results tenga más de 0 elementos.
       if (data && data.results && data.results.length > 0) {  //Si se cumple, se recorre el array results y se añaden los nombres al array names
-        data.results.forEach((location: any) => {
+        data.results.forEach((location: any) => { //Recorro el array results
           names.push(location.name);  //Añado el nombre de la localización al array names
         });
       }
